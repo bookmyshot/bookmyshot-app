@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.quicko.book_my_shot">
-   <application
+   
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" /> 
+   
+    <application
         android:label="book_my_shot"
         android:icon="@mipmap/ic_launcher">
         <activity
