@@ -1,70 +1,41 @@
 {
   "project_info": {
-    "project_number": "798607536510",
-    "project_id": "bookmyshot-quicko",
-    "storage_bucket": "bookmyshot-quicko.appspot.com"
+    "project_number": "41815111740",
+    "project_id": "bookmyshot-bd267",
+    "storage_bucket": "bookmyshot-bd267.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:798607536510:android:650c2e85c44343245b032f",
-        "android_client_info": {
-          "package_name": "com.bookmyshot"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "798607536510-2n52adtgth02pj5300kqlap2b8a1nkng.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyARwaS58UURXatwqP2SLm4Fvb63etyQu9s"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "798607536510-2n52adtgth02pj5300kqlap2b8a1nkng.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:798607536510:android:876c4ac27cea80985b032f",
+        "mobilesdk_app_id": "1:41815111740:android:d9289c3f97ad5a3c41ab39",
         "android_client_info": {
           "package_name": "com.quicko.book_my_shot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "798607536510-vg0h5eqkgdp2dph61vup0r8nlbqkmbdr.apps.googleusercontent.com",
+          "client_id": "41815111740-upo3dfo7dnma4phhon6anp56klj49c60.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.quicko.book_my_shot",
-            "certificate_hash": "5dd5b80557c9f455d542a2f9706a0456d9415823"
+            "certificate_hash": "3bfa71de6b5ade41f110031660a1d37f833c5a7b"
           }
         },
         {
-          "client_id": "798607536510-2n52adtgth02pj5300kqlap2b8a1nkng.apps.googleusercontent.com",
+          "client_id": "41815111740-1da9dk0707vg9o0a0o5saq2r7vpd70ml.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARwaS58UURXatwqP2SLm4Fvb63etyQu9s"
+          "current_key": "AIzaSyDz6hhcNQU1rA07_yIK9jDtH_pfd7c6ciU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "798607536510-2n52adtgth02pj5300kqlap2b8a1nkng.apps.googleusercontent.com",
+              "client_id": "41815111740-1da9dk0707vg9o0a0o5saq2r7vpd70ml.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
