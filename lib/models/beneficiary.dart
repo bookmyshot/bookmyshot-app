@@ -1,57 +1,9 @@
 import 'dart:convert';
-import 'appointment.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-@JsonSerializable()
+import 'appointment.dart';
+
 class Beneficiary {
-  final List<Beneficiaries> beneficiaries;
-  Beneficiary({
-    required this.beneficiaries,
-  });
-
-  Beneficiary copyWith({
-    List<Beneficiaries>? beneficiaries,
-  }) {
-    return Beneficiary(
-      beneficiaries: beneficiaries ?? this.beneficiaries,
-    );
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'beneficiaries': beneficiaries.map((x) => x.toMap()).toList(),
-    };
-  }
-
-  factory Beneficiary.fromMap(Map<String, dynamic> map) {
-    return Beneficiary(
-      beneficiaries: List<Beneficiaries>.from(
-          map['beneficiaries']?.map((x) => Beneficiaries.fromMap(x))),
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Beneficiary.fromJson(String source) =>
-      Beneficiary.fromMap(json.decode(source));
-
-  @override
-  String toString() => 'Beneficiary(beneficiaries: $beneficiaries)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Beneficiary &&
-        listEquals(other.beneficiaries, beneficiaries);
-  }
-
-  @override
-  int get hashCode => beneficiaries.hashCode;
-}
-
-class Beneficiaries {
   final String beneficiary_reference_id;
   final String name;
   final String birth_year;
@@ -65,7 +17,7 @@ class Beneficiaries {
   final String dose1_date;
   final String dose2_date;
   final List<Appointment> appointments;
-  Beneficiaries({
+  Beneficiary({
     required this.beneficiary_reference_id,
     required this.name,
     required this.birth_year,
@@ -81,7 +33,7 @@ class Beneficiaries {
     required this.appointments,
   });
 
-  Beneficiaries copyWith({
+  Beneficiary copyWith({
     String? beneficiary_reference_id,
     String? name,
     String? birth_year,
@@ -96,7 +48,7 @@ class Beneficiaries {
     String? dose2_date,
     List<Appointment>? appointments,
   }) {
-    return Beneficiaries(
+    return Beneficiary(
       beneficiary_reference_id:
           beneficiary_reference_id ?? this.beneficiary_reference_id,
       name: name ?? this.name,
@@ -132,8 +84,8 @@ class Beneficiaries {
     };
   }
 
-  factory Beneficiaries.fromMap(Map<String, dynamic> map) {
-    return Beneficiaries(
+  factory Beneficiary.fromMap(Map<String, dynamic> map) {
+    return Beneficiary(
       beneficiary_reference_id: map['beneficiary_reference_id'],
       name: map['name'],
       birth_year: map['birth_year'],
@@ -153,19 +105,19 @@ class Beneficiaries {
 
   String toJson() => json.encode(toMap());
 
-  factory Beneficiaries.fromJson(String source) =>
-      Beneficiaries.fromMap(json.decode(source));
+  factory Beneficiary.fromJson(String source) =>
+      Beneficiary.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Beneficiaries(beneficiary_reference_id: $beneficiary_reference_id, name: $name, birth_year: $birth_year, gender: $gender, mobile_number: $mobile_number, photo_id_type: $photo_id_type, photo_id_number: $photo_id_number, comorbidity_ind: $comorbidity_ind, vaccination_status: $vaccination_status, vaccine: $vaccine, dose1_date: $dose1_date, dose2_date: $dose2_date, appointments: $appointments)';
+    return 'Beneficiary(beneficiary_reference_id: $beneficiary_reference_id, name: $name, birth_year: $birth_year, gender: $gender, mobile_number: $mobile_number, photo_id_type: $photo_id_type, photo_id_number: $photo_id_number, comorbidity_ind: $comorbidity_ind, vaccination_status: $vaccination_status, vaccine: $vaccine, dose1_date: $dose1_date, dose2_date: $dose2_date, appointments: $appointments)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Beneficiaries &&
+    return other is Beneficiary &&
         other.beneficiary_reference_id == beneficiary_reference_id &&
         other.name == name &&
         other.birth_year == birth_year &&
