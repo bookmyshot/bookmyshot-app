@@ -5,13 +5,13 @@ import 'package:flutter/foundation.dart';
 
 @JsonSerializable()
 class Beneficiary {
-  final List<Beneficiarie> beneficiaries;
+  final List<Beneficiaries> beneficiaries;
   Beneficiary({
     required this.beneficiaries,
   });
 
   Beneficiary copyWith({
-    List<Beneficiarie>? beneficiaries,
+    List<Beneficiaries>? beneficiaries,
   }) {
     return Beneficiary(
       beneficiaries: beneficiaries ?? this.beneficiaries,
@@ -26,8 +26,8 @@ class Beneficiary {
 
   factory Beneficiary.fromMap(Map<String, dynamic> map) {
     return Beneficiary(
-      beneficiaries: List<Beneficiarie>.from(
-          map['beneficiaries']?.map((x) => Beneficiarie.fromMap(x))),
+      beneficiaries: List<Beneficiaries>.from(
+          map['beneficiaries']?.map((x) => Beneficiaries.fromMap(x))),
     );
   }
 
@@ -51,7 +51,7 @@ class Beneficiary {
   int get hashCode => beneficiaries.hashCode;
 }
 
-class Beneficiarie {
+class Beneficiaries {
   final String beneficiary_reference_id;
   final String name;
   final String birth_year;
@@ -65,7 +65,7 @@ class Beneficiarie {
   final String dose1_date;
   final String dose2_date;
   final List<Appointment> appointments;
-  Beneficiarie({
+  Beneficiaries({
     required this.beneficiary_reference_id,
     required this.name,
     required this.birth_year,
@@ -81,7 +81,7 @@ class Beneficiarie {
     required this.appointments,
   });
 
-  Beneficiarie copyWith({
+  Beneficiaries copyWith({
     String? beneficiary_reference_id,
     String? name,
     String? birth_year,
@@ -96,7 +96,7 @@ class Beneficiarie {
     String? dose2_date,
     List<Appointment>? appointments,
   }) {
-    return Beneficiarie(
+    return Beneficiaries(
       beneficiary_reference_id:
           beneficiary_reference_id ?? this.beneficiary_reference_id,
       name: name ?? this.name,
@@ -132,8 +132,8 @@ class Beneficiarie {
     };
   }
 
-  factory Beneficiarie.fromMap(Map<String, dynamic> map) {
-    return Beneficiarie(
+  factory Beneficiaries.fromMap(Map<String, dynamic> map) {
+    return Beneficiaries(
       beneficiary_reference_id: map['beneficiary_reference_id'],
       name: map['name'],
       birth_year: map['birth_year'],
@@ -153,19 +153,19 @@ class Beneficiarie {
 
   String toJson() => json.encode(toMap());
 
-  factory Beneficiarie.fromJson(String source) =>
-      Beneficiarie.fromMap(json.decode(source));
+  factory Beneficiaries.fromJson(String source) =>
+      Beneficiaries.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Beneficiarie(beneficiary_reference_id: $beneficiary_reference_id, name: $name, birth_year: $birth_year, gender: $gender, mobile_number: $mobile_number, photo_id_type: $photo_id_type, photo_id_number: $photo_id_number, comorbidity_ind: $comorbidity_ind, vaccination_status: $vaccination_status, vaccine: $vaccine, dose1_date: $dose1_date, dose2_date: $dose2_date, appointments: $appointments)';
+    return 'Beneficiaries(beneficiary_reference_id: $beneficiary_reference_id, name: $name, birth_year: $birth_year, gender: $gender, mobile_number: $mobile_number, photo_id_type: $photo_id_type, photo_id_number: $photo_id_number, comorbidity_ind: $comorbidity_ind, vaccination_status: $vaccination_status, vaccine: $vaccine, dose1_date: $dose1_date, dose2_date: $dose2_date, appointments: $appointments)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Beneficiarie &&
+    return other is Beneficiaries &&
         other.beneficiary_reference_id == beneficiary_reference_id &&
         other.name == name &&
         other.birth_year == birth_year &&
