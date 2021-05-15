@@ -1,13 +1,10 @@
 import 'dart:convert';
-import 'package:json_annotation/json_annotation.dart';
 
-@JsonSerializable()
 class Appointment {
   final String appointment_id;
   final int center_id;
   final String name;
   final String state_name;
-  final String address;
   final String district_name;
   final String block_name;
   final String from;
@@ -21,7 +18,6 @@ class Appointment {
     required this.center_id,
     required this.name,
     required this.state_name,
-    required this.address,
     required this.district_name,
     required this.block_name,
     required this.from,
@@ -37,7 +33,6 @@ class Appointment {
     int? center_id,
     String? name,
     String? state_name,
-    String? address,
     String? district_name,
     String? block_name,
     String? from,
@@ -52,7 +47,6 @@ class Appointment {
       center_id: center_id ?? this.center_id,
       name: name ?? this.name,
       state_name: state_name ?? this.state_name,
-      address: address ?? this.address,
       district_name: district_name ?? this.district_name,
       block_name: block_name ?? this.block_name,
       from: from ?? this.from,
@@ -70,7 +64,6 @@ class Appointment {
       'center_id': center_id,
       'name': name,
       'state_name': state_name,
-      'address': address,
       'district_name': district_name,
       'block_name': block_name,
       'from': from,
@@ -88,7 +81,6 @@ class Appointment {
       center_id: map['center_id']?.toInt(),
       name: map['name'],
       state_name: map['state_name'],
-      address: map['address'],
       district_name: map['district_name'],
       block_name: map['block_name'],
       from: map['from'],
@@ -107,7 +99,7 @@ class Appointment {
 
   @override
   String toString() {
-    return 'Appointment(appointment_id: $appointment_id, center_id: $center_id, name: $name, state_name: $state_name, address: $address, district_name: $district_name, block_name: $block_name, from: $from, to: $to, dose: $dose, session_id: $session_id, date: $date, slot: $slot)';
+    return 'Appointment(appointment_id: $appointment_id, center_id: $center_id, name: $name, state_name: $state_name, district_name: $district_name, block_name: $block_name, from: $from, to: $to, dose: $dose, session_id: $session_id, date: $date, slot: $slot)';
   }
 
   @override
@@ -119,7 +111,6 @@ class Appointment {
         other.center_id == center_id &&
         other.name == name &&
         other.state_name == state_name &&
-        other.address == address &&
         other.district_name == district_name &&
         other.block_name == block_name &&
         other.from == from &&
@@ -136,7 +127,6 @@ class Appointment {
         center_id.hashCode ^
         name.hashCode ^
         state_name.hashCode ^
-        address.hashCode ^
         district_name.hashCode ^
         block_name.hashCode ^
         from.hashCode ^
