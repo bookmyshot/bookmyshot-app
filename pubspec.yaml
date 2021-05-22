@@ -41,6 +41,7 @@ dependencies:
   
   # * SMS read [https://pub.dev/packages/telephony]
   telephony: ^0.1.3
+  mobile_number: ^1.0.4
 
 dev_dependencies:
   flutter_test:
